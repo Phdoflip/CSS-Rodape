@@ -10,23 +10,35 @@
 html, body {
   height: 100%;
   width: 100%;
-  background-color: #000; /* fundo preto uniforme */
+  background-color: #000; /* fundo preto */
   font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center; /* centraliza horizontalmente */
-  align-items: center;     /* centraliza verticalmente */
 }
 
-/* Rodapé centralizado */
+/* Container principal */
+.page-container {
+  min-height: 100vh; /* garante altura mínima da tela */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* conteúdo empilha normalmente */
+  align-items: center;
+  padding-bottom: 100px; /* espaço para o rodapé fixo */
+}
+
+/* Rodapé fixo */
 .footer {
+  position: fixed;
+  bottom: 0;             /* fixa na base da tela */
+  left: 50%;             /* centraliza horizontalmente */
+  transform: translateX(-50%);
   width: 350px;
-  max-width: 90%;           /* responsivo em telas pequenas */
+  max-width: 90%;
   padding: 20px 0;
-  background-color: #000;   /* fundo preto sólido */
+  background-color: #000; /* fundo preto */
   color: #fff;
   text-align: center;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(255,255,255,0.1); /* sombra sutil para destaque */
+  box-shadow: 0 4px 12px rgba(255,255,255,0.1);
+  z-index: 1000;          /* garante que fique acima do conteúdo */
 }
 
 .footer p {
